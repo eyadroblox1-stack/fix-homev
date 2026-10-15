@@ -1,0 +1,61 @@
+TM Maintenance final validation results
+Date: 2026-10-15
+
+[PASS] Original ZIP integrity
+unzip -tq returned 0
+
+[PASS] Dependency-free static smoke checks
+PASS: node --check script.js
+PASS: main files present
+PASS: 73 HTML IDs, no duplicate IDs
+PASS: 16 HTML images; all are local and all referenced assets exist
+PASS: all phone links target tel:01127893459; WhatsApp links use ['201127893459']
+PASS: 37 unique sitemap URLs and valid XML
+PASS: all 15 SVG files parse as XML
+PASS: booking fields have labels and required validation
+PASS: opaque legacy form endpoint and remote stock-image references are absent
+NOTE: this smoke test is static; it does not replace a real browser/WhatsApp end-to-end test.
+
+[PASS] JavaScript syntax check
+
+
+[PASS] Booking/WhatsApp form unit test
+PASS: valid booking builds the expected WhatsApp message and reports no automatic send
+PASS: invalid Egyptian mobile number is rejected
+
+[PASS] CSS rules/declaration parsing
+tinycss2 reported 0 parse/declaration errors
+
+[PASS] HTML parser diagnostics
+parsed <html> with 0 diagnostics
+
+[PASS] SVG and PNG assets
+15 SVGs valid; hero preview PNG (1200, 812)
+
+[PASS] Local HTTP/server routes
+/ -> HTTP 200, text/html, 88649 bytes; /services/washing-machine -> HTTP 200, text/html, 88649 bytes; /assets/hero-appliances.svg -> HTTP 200, image/svg+xml, 5305 bytes; /assets/hero-appliances.png -> HTTP 200, image/png, 75934 bytes; /assets/tm-logo.svg -> HTTP 200, image/svg+xml, 838 bytes; /style.css -> HTTP 200, text/css, 76037 bytes; /script.js -> HTTP 200, text/javascript, 172021 bytes; /sitemap.xml -> HTTP 200, application/xml, 5354 bytes; /robots.txt -> HTTP 200, text/plain, 77 bytes; /assets/not-a-real-file.svg -> HTTP 404 (expected)
+
+[PASS] Final ZIP integrity/content
+31 entries; 174123 bytes; zipfile CRC test passed
+
+[PASS] Independent extracted ZIP smoke checks
+PASS: node --check script.js
+PASS: main files present
+PASS: 73 HTML IDs, no duplicate IDs
+PASS: 16 HTML images; all are local and all referenced assets exist
+PASS: all phone links target tel:01127893459; WhatsApp links use ['201127893459']
+PASS: 37 unique sitemap URLs and valid XML
+PASS: all 15 SVG files parse as XML
+PASS: booking fields have labels and required validation
+PASS: opaque legacy form endpoint and remote stock-image references are absent
+NOTE: this smoke test is static; it does not replace a real browser/WhatsApp end-to-end test.
+
+[PASS] Independent extracted JS syntax check
+
+
+[PASS] Independent extracted form unit test
+PASS: valid booking builds the expected WhatsApp message and reports no automatic send
+PASS: invalid Egyptian mobile number is rejected
+
+[NOT TESTED] Real-browser visual layout, in-browser Console during navigation, mobile-device rendering, actual WhatsApp delivery, deployed Apache/Google verification.
+Reason: Chromium access to file:// and localhost was blocked by the execution environment (ERR_BLOCKED_BY_ADMINISTRATOR) before the site could load.
